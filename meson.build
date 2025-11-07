@@ -8,7 +8,7 @@ src = [
 	'src/file_reader.cpp',
 ]
 
-lib = library(
+lib = static_library(
 	'cmft',
 	src,
 	include_directories : inc,
