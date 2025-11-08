@@ -15,4 +15,7 @@ lib = static_library(
 	cpp_args : '-D_CRT_SECURE_NO_WARNINGS',
 )
 
-cmft = declare_dependency(include_directories : inc, link_with : lib)
+meson.override_dependency(
+	'cmft',
+	declare_dependency(include_directories : inc, link_with : lib)
+)
