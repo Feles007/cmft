@@ -12,7 +12,7 @@ public:
 	[[nodiscard]] T const *data() const {
 		return m_data;
 	}
-	[[nodiscard]] usize length() {
+	[[nodiscard]] usize length() const {
 		return N;
 	}
 	[[nodiscard]] T& operator[](usize i) {
