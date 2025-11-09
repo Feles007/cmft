@@ -6,6 +6,12 @@
 template <typename T, usize N>
 class Array {
 public:
+	[[nodiscard]] T *data() {
+		return m_data;
+	}
+	[[nodiscard]] T const *data() const {
+		return m_data;
+	}
 	[[nodiscard]] usize length() {
 		return N;
 	}

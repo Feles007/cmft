@@ -19,7 +19,10 @@ public:
 	[[nodiscard]] T *data() {
 		return m_data;
 	}
-	[[nodiscard]] T *length() {
+	[[nodiscard]] T const *data() const {
+		return m_data;
+	}
+	[[nodiscard]] T *length() const {
 		return m_length;
 	}
 	[[nodiscard]] T& operator[](usize i) {
