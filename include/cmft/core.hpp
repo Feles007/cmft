@@ -2,6 +2,7 @@
 
 #include <cinttypes>
 #include <cstdint>
+#include <type_traits>
 
 #define FMT_U8  PRIu8
 #define FMT_U16 PRIu16
@@ -40,3 +41,8 @@ using f64 = double;
 // Ideally null terminated strings shouldn't be
 // used anywhere, but some APIs require them.
 using nt_string = const char *;
+
+template <typename T>
+T implicit_cast(std::type_identity_t<T> value) {
+	return value;
+}

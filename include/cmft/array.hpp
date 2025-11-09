@@ -16,10 +16,10 @@ public:
 		return N;
 	}
 	[[nodiscard]] T& operator[](usize i) {
-		return static_cast<Slice<T>>(*this)[i];
+		return implicit_cast<Slice<T>>(*this)[i];
 	}
 	[[nodiscard]] T const& operator[](usize i) const {
-		return static_cast<Slice<const T>>(*this)[i];
+		return implicit_cast<Slice<const T>>(*this)[i];
 	}
 	[[nodiscard]] operator Slice<T>() { // NOLINT(google-explicit-constructor)
 		return Slice<T>(m_data, N);

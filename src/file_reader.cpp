@@ -13,7 +13,7 @@ FileData FileData::read_file(nt_string path) {
 
 	const auto file_size_long = std::ftell(file);
 	if (file_size_long == -1) errno_exit();
-	const auto file_size = static_cast<usize>(file_size_long);
+	const auto file_size = implicit_cast<usize>(file_size_long);
 
 	u8 *buffer = allocate_array<u8>(file_size);
 

@@ -1,6 +1,8 @@
 #include "cmft/array.hpp"
+#include "cmft/heap_array.hpp"
 
 void func(Slice<const int>) {}
+void func2(Slice<int>) {}
 
 void test() {
 	Array<int, 6> a;
@@ -18,4 +20,17 @@ void test() {
 
 	const int& n = b[0];
 	(void)n;
+	auto h = HeapArray<int>(9);
+
+	func(h);
+
+	func2(a);
+	func2(s);
+	//	func2(cs); // nope
+	func2(h);
+
+	h.deallocate();
+
+	h = HeapArray<int>(16);
+	h.deallocate();
 }
