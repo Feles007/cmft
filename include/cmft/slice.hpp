@@ -8,9 +8,6 @@ template <typename T>
 class Slice;
 
 template <typename T>
-using CSlice = Slice<const T>;
-
-template <typename T>
 class Slice {
 public:
 	Slice() = default;
