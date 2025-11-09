@@ -6,6 +6,7 @@ src = [
 	'src/error.cpp',
 	'src/allocation.cpp',
 	'src/file_reader.cpp',
+	'src/test.cpp',
 ]
 
 lib = static_library(
