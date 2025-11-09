@@ -1,5 +1,6 @@
 #include "cmft/array.hpp"
 #include "cmft/heap_array.hpp"
+#include "cmft/io/file_reader.hpp"
 
 void func(Slice<const int>) {}
 void func2(Slice<int>) {}
@@ -33,4 +34,7 @@ void test() {
 
 	h = HeapArray<int>(16);
 	h.deallocate();
+
+	auto file = read_file("meson.build");
+	file.deallocate();
 }
