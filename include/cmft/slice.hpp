@@ -16,6 +16,12 @@ public:
 		requires(std::is_const_v<T> && std::is_same_v<U, std::remove_const_t<T>>)
 	Slice(Slice<U> non_const) : m_data(non_const.m_data), m_length(non_const.m_length) {} // NOLINT(google-explicit-constructor)
 
+	[[nodiscard]] T *data() {
+		return m_data;
+	}
+	[[nodiscard]] T *length() {
+		return m_length;
+	}
 	[[nodiscard]] T& operator[](usize i) {
 		debug_xassert(m_data);
 		debug_xassert(i < m_length);
