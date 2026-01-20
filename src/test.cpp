@@ -5,7 +5,7 @@
 void func(Slice<const int>) {}
 void func2(Slice<int>) {}
 
-void test() {
+int main() {
 	Array<int, 6> a;
 
 	for (usize i = 0; i < a.length(); ++i) {

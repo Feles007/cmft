@@ -1,2 +1,5 @@
 .idea
-buildDir
+.vs
+.cache
+out
+build
